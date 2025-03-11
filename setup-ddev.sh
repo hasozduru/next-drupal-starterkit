@@ -7,7 +7,7 @@ commands=(
   "ddev composer install"
   "ddev generate-oauth-keys"
   "ddev drush si minimal -y"
-  "ddev install-recipe wunder_next_setup"
+  "ddev drush recipe ../recipes/wunder_next_setup -y"
   "ddev drush wunder_next:setup-users-and-consumers"
   "ddev drush eshd -y"
   "ddev drush eshs"
@@ -16,7 +16,7 @@ commands=(
   "ddev drush mim --group=demo_content --execute-dependencies"
   "ddev drush pm-uninstall wunder_democontent migrate migrate_tools migrate_plus -y"
   "ddev drush state:del wunder_democontent.disable_revalidation"
-  "ddev drush cron"
+  "ddev drush queue:run elasticsearch_helper_indexing"
   "cd next && ddev npm run build"
 )
 

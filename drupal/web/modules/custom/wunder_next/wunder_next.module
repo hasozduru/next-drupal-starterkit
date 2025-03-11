@@ -88,7 +88,7 @@ function wunder_next_ckeditor5_plugin_info_alter(array &$plugin_definitions): vo
     $image_resize_plugin_definition = $plugin_definitions['ckeditor5_imageResize']->toArray();
     $image_resize_plugin_definition["ckeditor5"]["config"]["image"]["resizeUnit"] = "px";
     $plugin_definitions['ckeditor5_imageResize'] = new CKEditor5PluginDefinition($image_resize_plugin_definition);
-  };
+  }
 }
 
 /**
@@ -219,4 +219,18 @@ function wunder_next_page_attachments_alter(array &$attachments) {
     ],
     'noindex',
   ];
+}
+
+/**
+ * Implements hook_next_site_preview_alter().
+ */
+function wunder_next_next_site_preview_alter(array &$preview, array &$context) {
+
+  /** @var \Drupal\Core\Entity\EntityRepositoryInterface $entity_repository */
+  $entity_repository = \Drupal::service('entity.repository');
+  // Make sure we use the translated version of the entity, if available:
+  $context['entity'] = $entity_repository->getTranslationFromContext($context['entity']);
+  // Rebuild the preview:
+  $preview = $context['plugin']->render($context['entity'], $context['sites']);
+
 }

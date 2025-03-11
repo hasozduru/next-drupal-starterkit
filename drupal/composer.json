@@ -20,38 +20,42 @@
         "cweagans/composer-patches": "^1.7",
         "drupal/admin_toolbar": "^3.5",
         "drupal/consumers": "^1.19",
-        "drupal/core-composer-scaffold": "^10.3",
-        "drupal/core-recommended": "^10.3",
-        "drupal/elasticsearch_helper": "^8.1",
+        "drupal/core-composer-scaffold": "^10.4",
+        "drupal/core-recommended": "^10.4",
+        "drupal/decoupled_router": "^2.0",
+        "drupal/elasticsearch_helper": "^8.2",
         "drupal/entity_reference_revisions": "^1.12",
-        "drupal/graphql": "^4.9",
-        "drupal/graphql_compose": "^2.2",
+        "drupal/graphql": "^4.10",
+        "drupal/graphql_compose": "^2.3",
+        "drupal/graphql_compose_preview": "^1.0",
         "drupal/menu_link_attributes": "^1.5",
-        "drupal/metatag": "^2.0",
+        "drupal/metatag": "^2.1",
         "drupal/migrate_plus": "^6.0",
         "drupal/migrate_source_csv": "^3.5",
         "drupal/migrate_tools": "^6.0",
         "drupal/monolog": "^3.0@beta",
-        "drupal/next": "^2.0@beta",
+        "drupal/next": "^2.0",
         "drupal/paragraphs": "^1.18",
         "drupal/pathauto": "^1.13",
-        "drupal/redirect": "^1.10",
+        "drupal/redirect": "^1.11",
         "drupal/registration_role": "^2.0",
         "drupal/require_login": "^3.0",
         "drupal/restui": "^1.21",
         "drupal/simple_oauth": "^5.2",
         "drupal/simplei": "^2.0@beta",
+        "drupal/subrequests": "^3.0",
         "drupal/token": "^1.15",
+        "drupal/typed_data": "^2.1",
         "drupal/webform": "^6.2",
         "drupal/webform_rest": "^4.0",
-        "drush/drush": "^12",
+        "drush/drush": "^13",
         "elasticsearch/elasticsearch": "^8.9",
         "vlucas/phpdotenv": "^5.4",
         "webflo/drupal-finder": "^1.2",
         "wunderio/drupal-ping": "^2.4"
     },
     "require-dev": {
-        "drupal/core-dev": "^10.3",
+        "drupal/core-dev": "^10.4",
         "wunderio/code-quality": "^2.2"
     },
     "conflict": {
@@ -130,10 +134,10 @@
         "composer-exit-on-patch-failure": true,
         "patches": {
             "drupal/subrequests": {
-                "#3049395-47 - Page Cache causes different subrequests to return the same responses": "https://www.drupal.org/files/issues/2022-12-06/subrequests-3049395-chnage-request-type-47.patch"
+                "#3049395-58 - Page Cache causes different subrequests to return the same responses": "https://www.drupal.org/files/issues/2024-08-06/subrequests-3049395-change-request-type.patch"
             },
             "drupal/decoupled_router": {
-                "#3111456-59 - Unable to resolve path on node in other language than default": "https://www.drupal.org/files/issues/2022-12-01/decouple_router-3111456-resolve-language-issue-58--get-translation.patch"
+                "#3111456-78 - Unable to resolve path on node in other language than default": "https://www.drupal.org/files/issues/2024-10-22/decoupled_router-3111456-resolve-langcode-issue-78--external-redirects.patch"
             },
             "drupal/paragraphs": {
                 "Paragraphs (stable) title from form options not being applied (issue #3401581)": "https://www.drupal.org/files/issues/2023-11-14/paragraphs-custom-title-not-displayed-3401581-2.patch"
